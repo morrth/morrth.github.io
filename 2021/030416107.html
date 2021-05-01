@@ -1,0 +1,1636 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="H5+CSS3+ES6新特性总结, Morrth">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>H5+CSS3+ES6新特性总结 | Morrth</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+	<!-- waifu-tips.js 依赖 JQuery 库 -->
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://z3.ax1x.com/2021/03/21/64RSQs.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Morrth</span>
+                </a>
+            </div>
+			
+    
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Morrth</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			文章
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+			
+        
+    </nav>
+
+</header>
+
+    
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">H5+CSS3+ES6新特性总结</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%96%B0%E7%89%B9%E6%80%A7/">
+                                <span class="chip bg-color">前端新特性</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                web前端
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-04
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-04-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    19 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><ol>
+<li><p>语义化的区块和段落元素：<code>&lt;section&gt;</code>,<code>&lt;article&gt;</code>,<code>&lt;nav&gt;</code>,<code>&lt;header&gt;</code>,<code>&lt;footer&gt;</code>,<code>&lt;aside&gt;</code>和<code>&lt;hgroup&gt;</code> </p>
+</li>
+<li><p>音频和视频：<code>&lt;audio&gt;</code>和<code>&lt;video&gt;</code>元素嵌入和允许操作新的多媒体内容</p>
+</li>
+<li><p>表单input的属性：<code>color</code>，<code>date</code> ，<code>datetime-local</code> ，<code>email</code> </p>
+</li>
+<li><p>新的语义元素除了节段，媒体和表单元素之外，还有众多的新元素：<code>&lt;mark&gt;</code>，<code>&lt;figure&gt;</code>，<code>&lt;figcaption&gt;</code>，<code>&lt;data&gt;</code>，<code>&lt;time&gt;</code>，<code>&lt;output&gt;</code>，<code>&lt;progress&gt;</code>， 或者<code>&lt;meter&gt;</code>和<code>&lt;main&gt;</code>，这增加了有效的 HTML5 元素的数量。</p>
+</li>
+<li><p>MathML：允许直接嵌入数学公式。</p>
+</li>
+<li><p>Web Sockets：允许在页面和服务器之间建立持久连接并通过这种方法来交换非 HTML 数据。</p>
+</li>
+<li><p>Server-sent events：允许服务器向客户端推送事件，而不是仅在响应客户端请求时服务器才能发送数据的传统范式。</p>
+</li>
+<li><p>Web Workers：能够把 JavaScript 计算委托给后台线程，通过允许这些活动以防止使交互型事件变得缓慢。</p>
+</li>
+<li><p>XMLHttpRequest：允许异步读取页面的某些部分，允许其显示动态内容，根据时间和用户行为而有所不同。这是在<a href="https://link.zhihu.com/?target=https://developer.mozilla.org/zh-CN/docs/AJAX">Ajax</a>背后的技术。</p>
+</li>
+<li><p>History API：允许对浏览器历史记录进行操作。这对于那些交互地加载新信息的页面尤其有用。</p>
+</li>
+<li><p>SVG：一个基于 XML 的可以直接嵌入到 HTML 中的矢量图像格式。</p>
+</li>
+<li><p>Canvas：画布API。</p>
+</li>
+<li><p>Geolocation：地理API</p>
+</li>
+</ol>
+<h3 id="增强型表单"><a href="#增强型表单" class="headerlink" title="增强型表单"></a>增强型表单</h3><p>1.新input type </p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">`<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>?</span><span class="token punctuation">&gt;</span></span>`
+**H4:text;checkbox;password;radio;submit;reset;File;`**
+**H5:email;url;number;search;color;date;month;week**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p>2.新的表单元素</p>
+<pre class="line-numbers language-none"><code class="language-none">**H4:input;button;select;textarea**
+**H5:datalist;progress;meter;output**<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="datalist-数据列表"><a href="#datalist-数据列表" class="headerlink" title="datalist(数据列表)"></a>datalist(数据列表)</h4><p>datalist本身不可见，datalist为input提供输入建议列表</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>datalist</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”options”</span><span class="token punctuation">&gt;</span></span>     
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Chrome<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Firefox<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Internet Explorer<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Opera<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>option</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Safari<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>datalist</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">list</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>options<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>input</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="progress-进度条"><a href="#progress-进度条" class="headerlink" title="progress(进度条)"></a>progress(进度条)</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>progress</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>progress</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>progress</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.5<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>progress</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p><progress></progress> 左右晃动进度条<br><progress value="0.5"> </progress> 具有指定进度值进度条</p>
+<h4 id="meter-刻度尺"><a href="#meter-刻度尺" class="headerlink" title="meter(刻度尺)"></a>meter(刻度尺)</h4><p>Meter：用于标示一个值所值的范围:不可接受(红色),可以接受(黄色),非常优秀(绿)<br>如薪水:</p>
+<p>&lt;meter min=”最小值” max=”最大值” low=”下限” high=”上限” optimum=”最佳值” value=”当前值”&gt;</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meter</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>3<span class="token punctuation">"</span></span> <span class="token attr-name">min</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">max</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meter</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meter</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.6<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meter</span><span class="token punctuation">&gt;</span></span> 
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meter</span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.3<span class="token punctuation">"</span></span> <span class="token attr-name">high</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.9<span class="token punctuation">"</span></span> <span class="token attr-name">low</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>0.1<span class="token punctuation">"</span></span> <span class="token attr-name">optimum</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>meter</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><meter value="3" min="0" max="10">十分之三十分之三十分之三十分之三</meter>十分之三</p>
+<p><meter value="0.6">60%</meter> 60%</p>
+<p>**<meter value="0.3" high="0.9" low="0.1" optimum="2"></meter> **</p>
+<h4 id="output"><a href="#output" class="headerlink" title="output"></a>output</h4><p>output:输出，语义标签,没有任何外观样式，样式等同于span</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html">商品单价: 3.50
+购买数量: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">value</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>2<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+小计:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>output</span><span class="token punctuation">&gt;</span></span>7.00<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>output</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h4 id="表单元素新属性"><a href="#表单元素新属性" class="headerlink" title="表单元素新属性"></a>表单元素新属性</h4><p>H4:type;id;value;name;style;readyonly;disabled;checked<br>H5:<br>(1) placeholder 占位符<br>(2) autofocus 自动获取输入焦点<br>(3) multiple 允许输入框中输入多个值，用逗号分值<br>(4) form 用于把输入域放置在表单外部</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f3<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">form</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>f3<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>(5) required 必填空<br>(6) maxlength 字符串最大长度<br>(7) minlength 字符串最小长度<br>(8) min 指定数值最小值<br>(9) max 指定数值最大值<br>(10) pattern 指定输入内容符合正则表达式</p>
+<h3 id="视频与音频"><a href="#视频与音频" class="headerlink" title="视频与音频"></a>视频与音频</h3><h4 id="Flash被H5取代"><a href="#Flash被H5取代" class="headerlink" title="Flash被H5取代"></a>Flash被H5取代</h4><p> Flash绘图(AS/Flex)   -&gt;    canvas/svg<br> Flash动画            -&gt;    canvas/svg 定时器<br> Flash视频和音频播放   -&gt;    video/audio<br> Flash 客户端存储      -&gt;    webstorage</p>
+<h4 id="视频播放"><a href="#视频播放" class="headerlink" title="视频播放"></a>视频播放</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”b.mp4”</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>video</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”b.mp4”</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”b.ogg”</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”b.webm”</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>source</span><span class="token punctuation">&gt;</span></span>
+    您的浏览器版本太低，请升级
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>video</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>它本身是一个300*150的inline-block元素<br>成员属性:<br>autoplay 是否自动播放<br>controls 是否显示控件<br>muted 是否静音<br>loop 是否循环播放<br>poster 在播放第一帧画面之前广告(图片)<br>preload 视频加载策略</p>
+<p><strong>auto: 预加载一定时长视频和元数据</strong></p>
+<p>metadata:    仅预加载元素数(尺寸，时长，第一帧画面)<br>  none:        不加载任何内容</p>
+<p><strong>对象属性:</strong></p>
+<p>currentTime  当前播放时长<br>duration     总时长<br>paused:     当前视频是否处理暂停状态<br>volume（0~1）  音量</p>
+<p>playbackRate: 回放速率: 大于1快播 小于1慢放<br>js 成员方法<br>play() 播放视频<br>pause() 暂停视频播放<br>js 事件<br>onplay 当视频开始播放触发事件<br>onpause 当视频暂停播放触发事件</p>
+<h4 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”a.mp3”</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>audio</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”a.mp3”</span> <span class="token punctuation">/&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>source</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”a.wav”</span> <span class="token punctuation">/&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>audio</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>它默认300*30的inline-block元素，但是没有controls属性，则display:none;<br>成员属性:<br>autoplay 是否自动播放<br>controls 是否显示控件<br>muted 是否静音<br>loop 是否循环播放<br>preload 视频加载策略</p>
+<p><strong>auto: 预加载一定时长视频和元数据</strong></p>
+<p>metadata:    仅预加载元素数(尺寸，时长，第一帧画面)<br>  none:        不加载任何内容</p>
+<p><strong>对象属性</strong></p>
+<p>currentTime  当前播放时长<br>duration     总时长<br>paused:     当前视频是否处理暂停状态<br>volume（0~1）  音量</p>
+<p>playbackRate: 回放速率: 大于1快播 小于1慢放<br>js 成员方法<br>play() 播放视频<br>pause() 暂停视频播放<br>js 事件<br>onplay 当视频开始播放触发事件<br>onpause 当视频暂停播放触发事件</p>
+<h3 id="canvas绘图"><a href="#canvas绘图" class="headerlink" title="canvas绘图"></a>canvas绘图</h3><p>应用: 网页中的实时走势图,抢红包,网页游戏,地图应用..<br>(1)SVG 绘图 2D矢量绘图技术，2000年出现,后纳入h5<br>(2)Canvas绘图 2D位图绘图技术，H5提出<br>(3)WebGL绘图 3D绘图技术，尚未纳入H5标准</p>
+<p>Canvas绘图难点所在:<br>(1)坐标系<br>(2)单词比较多</p>
+<h4 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html">Canvas画布:画布是H5提供的绘图基础
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>canvas</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”500”</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”400”</span><span class="token punctuation">&gt;</span></span>
+      您的浏览器版本太低，请升级
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>canvas</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Canvas标签在浏览器中默认是300*150的inine-block,画布宽度高度属性只能用js/属性来赋值.<br>不能用CSS样式赋值.<br>每个画布上有且只有一个”画笔”对象—使用该对象来绘图<br>var ctx = canvas.getContext(“2d”); 得到画布的画笔对象</p>
+<p><strong>(1)使用canvas绘制矩形(长方形)</strong></p>
+<p>矩形定位点在自己左上角<br> ctx.lineWidth = 1;        描边宽度(边线宽度)<br> ctx.fillStyle = “#999”;      填充样式<br> ctx.strokeStyle = “#000”;   描边样式<br> ctx.fillRect(x,y,w,h);       填充矩形<br> ctx.strokeRect(x,y,w,h);    描边矩形<br> ctx.clearRect(x,y,w,h);     清除矩形范围内所有图形</p>
+<p><strong>(2)使用canvas绘制文本</strong></p>
+<p>ctx.textBaseline = “alphabetic” 文本基线<br>ctx.font = “12px sans-serif”; 文本大小和字体<br>ctx.fillText(str,x,y); 填充一段文本<br>ctx.strokeText(str,x,y) 描边一段文本<br>ctx.measureText(str); 测量文本宽度</p>
+<h4 id="路径"><a href="#路径" class="headerlink" title="路径"></a>路径</h4><p>path:由多个坐标点组成任意形状，路径不可见，可用于“描边”,</p>
+<p>”填充”复杂图形依靠路径<br>ctx.beginPath(); 开始一条新路径<br>ctx.closePath(); 闭合当前路径<br>ctx.moveTo(x,y); 移动到指定点<br>ctx.lineTo(x,y); 从当前点到指定点画直线<br>ctx.arc(cx,cy,r,start,end); 绘制圆拱型 cx,cy 圆心 r 半径 start,end 开始角度和结束角度<br>圆弧度 0~2<em>Math.PI</em><br><em>角度=&gt;弧度 n</em>Math.PI/180=&gt;弧度<br>ctx.stroke(); 描边<br>ctx.fill(); 填充</p>
+<h4 id="图像"><a href="#图像" class="headerlink" title="图像"></a>图像</h4><p>canvas 属于客户端技术，图片保存服务器，所以浏览器先下载，再绘制图片，且等待图处下载完成.</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> p3 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ p3<span class="token punctuation">.</span>src <span class="token operator">=</span> “x<span class="token punctuation">.</span>jpg”<span class="token punctuation">;</span>     <span class="token comment">//下载指定图片</span>
+p3<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token comment">//当图片下载成功后触发事件</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p3<span class="token punctuation">.</span>width<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ctx<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>p3<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment">//绘制原始大小图片</span>
+ctx<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>p3<span class="token punctuation">,</span>x<span class="token punctuation">,</span>y<span class="token punctuation">,</span>w<span class="token punctuation">,</span>h<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//拉伸图片</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="图像-gt-变形"><a href="#图像-gt-变形" class="headerlink" title="图像->变形"></a>图像-&gt;变形</h4><p>canvas绘图中有变形技术同，可以针对某一个图形/图像在绘制过程中进行变形:rotate();translate();平移原点<br>ctx.rotate(弧度); 旋转绘制图像以画布原点为轴心.<br>ctx.translate(x,y); 将画布原点平移到指定位置<br>ctx.save(); 保存画笔当前所有状态值<br>ctx.restore()); 恢复画笔上一次保存时所有状态值</p>
+<h3 id="svg绘制"><a href="#svg绘制" class="headerlink" title="svg绘制"></a>svg绘制</h3><p>位图:由一个一个像素点组成，每个点各有自己颜色，色彩细腻，但放大会失真.<br>矢量图:由一条一条线条组成，每个线条有自己颜色和方向，可以无限缩放，但细节不够丰富</p>
+<p><strong>canvas绘图和svg绘图对比</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>canvas</th>
+<th>svg</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>类型</td>
+<td>2D位图</td>
+<td>2D矢量图</td>
+</tr>
+<tr>
+<td>如何绘制图</td>
+<td>使用JS代码绘图</td>
+<td>使用标签绘图</td>
+</tr>
+<tr>
+<td>事件绑定</td>
+<td>每个图形不是一个元素，无法直接绑定事件</td>
+<td>每个图形都是元素，可以直接绑定事件监听</td>
+</tr>
+<tr>
+<td>应用场合</td>
+<td>游戏,特效</td>
+<td>地图</td>
+</tr>
+</tbody></table>
+<p>SVG诞生于2000年，早期作为XML扩展应用出现，H5标准把常用，SVG标签采纳为标准，但有些被废弃.<br><strong>svg使用方式</strong></p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>svg</span><span class="token punctuation">&gt;</span></span>
+...
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>svg</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p><svg></svg> 本身是一个300*150的inline-block</p>
+<h4 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>rect</span> <span class="token attr-name">width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">height</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">fill-opacity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span>
+<span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">storke-opacity</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>rect</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h4 id="圆形"><a href="#圆形" class="headerlink" title="圆形"></a>圆形</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>circle</span> <span class="token attr-name">r</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>circle</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="椭圆"><a href="#椭圆" class="headerlink" title="椭圆"></a>椭圆</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ecllipse</span>  <span class="token attr-name">rx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">ry</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span>  <span class="token attr-name">cx</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">cy</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span>  <span class="token punctuation">/&gt;</span></span>
+  rx:水平半径
+  ry:垂直半径<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h4 id="直线"><a href="#直线" class="headerlink" title="直线"></a>直线</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>line</span> <span class="token attr-name">x1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">y1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">x2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">y2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">stroke</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">stroke-width</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””..</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>line</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="折线"><a href="#折线" class="headerlink" title="折线"></a>折线</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>polyline</span> <span class="token attr-name">points</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”x,y</span> <span class="token attr-name">x,y</span> <span class="token attr-name">x,y</span> <span class="token attr-name">...”</span> <span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>polyline</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>text</span> <span class="token attr-name">text-size</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””</span> <span class="token attr-name">fill</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>””...</span><span class="token punctuation">&gt;</span></span>文本内容<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>text</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="图像-1"><a href="#图像-1" class="headerlink" title="图像"></a>图像</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>image</span> <span class="token attr-name"><span class="token namespace">xlink:</span>href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”x.jpg”</span> <span class="token attr-name">x</span> <span class="token attr-name">y</span> <span class="token attr-name">width</span> <span class="token attr-name">height</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>image</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<h4 id="渐变对象"><a href="#渐变对象" class="headerlink" title="渐变对象"></a>渐变对象</h4><pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>defs</span><span class="token punctuation">&gt;</span></span>
+     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>linearGradient</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”r2”</span> <span class="token attr-name">x1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”0%”</span> <span class="token attr-name">y1</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”0%”</span> <span class="token attr-name">x2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”100%”</span> <span class="token attr-name">y2</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”0%”</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”0%”</span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”green”</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”50%”</span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”yellow”</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>stop</span> <span class="token attr-name">offset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”100%”</span> <span class="token attr-name">stop-color</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”red”</span><span class="token punctuation">&gt;</span></span>
+   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>defs</span><span class="token punctuation">&gt;</span></span>
+   &lt;rect width=”400” height=”200” fill=”url(#r2)”<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="地理定位-实现需要联网"><a href="#地理定位-实现需要联网" class="headerlink" title="地理定位(实现需要联网)"></a>地理定位(实现需要联网)</h3><p>Geolocation:地理定位,使用js获得当前浏览器所在地理坐标(经度，纬度，海拨，速度)数据，用于实现LBS应用(Location Base Service),如饿了么，高德导航…<br>获取地理定位类型<br>(1)浏览器自带对象geolocation[实现不了]<br>(2)百度地图,腾讯地图[准确度高]</p>
+<p>手机浏览器如何获取定位信息<br>(1) 首选手机中GPS芯片与卫星通信，定位精度在米<br>(2) 次选手机通信基站进行定位，定位精度在公里<br>PC浏览器如何获取定位信息<br>(3) IP地理解析反向查找..</p>
+<p>html5提供了一个新对象，用于获取当前浏览器定位信息<br>window.navigator.geolocation{};<br>getCurrentPosition:fn获取定位</p>
+<p>百度地图:<br>(1)百度地图开发者 <a href="https://link.zhihu.com/?target=http://lbsyun.baidu.com/">http://lbsyun.baidu.com/</a><br>(2)注册百度开发者帐户 手机<br>(3)创建一个网站:为网站申请访问密钥 AccessKey</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">网站名称[abc123]
+ [....]<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>(4) AccessKey<br>(5)开放示例</p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">//加载百度API指定密钥
+ &lt;script src="http://api.map.baidu.com/api?
+ v=2.0&amp;ak=申请密钥"&gt;
+ &lt;/script&gt;
+ var map = new BMap.Map("container");<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>// 创建地图实例<br>var point = new BMap.Point(116.404, 39.915);<br>// 创建点坐标<br>map.centerAndZoom(point, 15);<br>// 初始化地图，设置中心点坐标和地图级别</p>
+<h3 id="拖动API（拖动上传图片）"><a href="#拖动API（拖动上传图片）" class="headerlink" title="拖动API（拖动上传图片）"></a>拖动API（拖动上传图片）</h3><p>Drag &amp; Drop :拖动和释入<br>HTML5为拖动行为提供7个事件，分为两组<br>拖动的源动(会动)可以触发3个事件<br>dragstart 拖动开始<br>drag 拖动中<br>dragend 拖动结束<br>拖动的目标对象(不动)可以触发4个事件<br>dragenter 拖动进入<br>dragover 拖动悬停在上方<br>dragleave 拖动离开<br>drop 拖动释放</p>
+<h3 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h3><p> 上传文件web项目通常使用功能:上传头像,邮件附件,上传商品图片,上传docx文档,喜玛拉雅，斗鱼…<br> 上传文件类型：指定任意类型/指定特定类型(jpg/png/gif)<br> 上传文件方式:<br> (1)表单同步提交  –简单,用户感受差<br> (2)ajax上传      –复杂,用户感受好(拖动,预览图片)<br> (3)第三方js工具库—剪切</p>
+<h3 id="Web-Worker"><a href="#Web-Worker" class="headerlink" title="Web Worker"></a>Web Worker</h3><p>程序:一组代码(硬盘)<br>进程: 操作系统将程序代码调用(内存中)准备执行<br>线程: 进程内部执行代码序列</p>
+<p>浏览器在线程模型:多个线程用于请求资源，运算js代码/渲染页面内容–1(UI)线程（并行加载，串行执行）</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>按钮1<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>1.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span><span class="token punctuation">&gt;</span></span>按钮2<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>解决方案:<br>创建一个新的web Woker线程执行1.js程序,让UI继续执行绘制页面内容;</p>
+<p><strong>1: Woker线程有缺点</strong><br>浏览器不允行worker线程操作DOM、BOM元素<br>原因:浏览器只允许UI线程操作DOM/BOM，也就是woker<br>执行的代码中不能包含DOM操作/类似jquery也不行.</p>
+<p><strong>2:Worker线程可以发送或者接收UI线程数据</strong></p>
+<p>//Woker发送数据–&gt;UI接收数据<br>   <strong>1:worker</strong><br>    postMessage(rs);<br>   <strong>2:UI</strong><br>    var w2 = new Worker(“01.js”);<br>    w2.onmessage = function(e){e.data}<br> //UI发送数据–&gt;Worker接收数据<br>   <strong>1:UI</strong><br>    var w2 = new Woker(“01.js”);<br>    w2.postMessage(stringMsg);<br>   <strong>2:Worker</strong><br>    onmessage = function(e){e.data}</p>
+<p>项目中使用Worker<br>(1)只要js中有DOM/BOM不能使用Worker<br>(2)Worker适合于执行耗时JS任务,如数据分析数据统计</p>
+<h3 id="WebStorage"><a href="#WebStorage" class="headerlink" title="WebStorage"></a>WebStorage</h3><p>在浏览器中存储当用户的专用数据: 访问历史;定制样式,<br> 在客户端存储数据技术<br> (1)Cookie技术        兼容性好,数据不能超4kb,操作复杂<br> (2)Flash                依赖Flash播放器<br> (3)H5 WebStorage        数据8MB左右,操作简单<br> (4)IndexedDB         可存储大量数据，不是标准</p>
+<p><strong>Session:会话 (操作过程)</strong><br>浏览器从打开某一个网站第一个网页开始[会话开始],中间可能打开多个页面[会话中]直到关闭浏览器[会话结束],整个过程称为一次”会话”</p>
+<p><strong>WebStorage提供二个对象:</strong></p>
+<p>WebStorage提供两种类型的API：localStorage和sessionStorage，两者的区别看名字就有大概了解，localStorage在本地永久性存储数据，除非显式将其删除或清空，sessionStorage存储的数据只在会话期间有效，关闭浏览器则自动删除。两个对象都有共同的API</p>
+<p><strong>(1)sessionStorage:类数组对象</strong><br>  在浏览器进程序中分配一内存,存储一次web会话数据,可供此次会话中所有页面读取或者保存，一旦浏览器关闭数据消失.<br>  示例:登录用户编号;昵称</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//保存数据</span>
+sessionStorage<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span>val<span class="token punctuation">;</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+sessionStorage<span class="token punctuation">.</span>length            <span class="token comment">//保存数量</span>
+<span class="token keyword">var</span> key <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//依据数值返回左侧key</span>
+<span class="token comment">//获取数据</span>
+<span class="token keyword">var</span> val <span class="token operator">=</span> sessionStorage<span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+<span class="token keyword">var</span> val <span class="token operator">=</span> sessionStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//清除数据</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+sessionStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>(2)localStorage</strong><br> 数据保存磁盘上，数据可以跨会话，即使浏览器关闭，数据也保存。</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">//保存数据</span>
+localStorage<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token operator">=</span>val<span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span>val<span class="token punctuation">)</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span>length            <span class="token comment">//保存数量</span>
+<span class="token keyword">var</span> key <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">key</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">//依据数值返回左侧key</span>
+<span class="token comment">//获取数据</span>
+<span class="token keyword">var</span> val <span class="token operator">=</span> localStorage <span class="token punctuation">[</span>key<span class="token punctuation">]</span>
+<span class="token keyword">var</span> val <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">//清除数据</span>
+localStorage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+localStorage<span class="token punctuation">.</span><span class="token function">clear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>注意点</strong></p>
+<ol>
+<li>localStorage中若数据发生了修改，会触发一次window.onstorage事件,可以监听此事件，实现监视localStorage数据改变目的,sessionStorage数据修改不会<br>触发此事件.</li>
+<li>localStorage和sessionStorage只能存储字符串类型，对于复杂的对象可以使用ECMAScript提供的JSON对象的stringify和parse来处理</li>
+</ol>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>HTTP协议:属于”请求-响应”模型，只有客户端发起请求，服务器才会返回响应消息，没有请求就没有响应,一个请示主体，只能得到一个响应，有一些场景，此种模型力不从心如：实时股票走势图<br>解决方案: 长轮询(心跳请求)+AJAX –请求过于频繁，服务器压力大,不够频繁，客户不满意.</p>
+<p>WebSocket协议: 属于”广播+接收”, 客户端连到服务器就不再断开,</p>
+<p>永久连接,双方随时向对方发送数据,发送消息:ws协议适合于:实走股票走势图<br>ws服务器: 监听指定端口,向对方发送消息也可以接收消息.<br>ws客户端: 主动发起连接请求，保持永久连接，向对方发送消息，并且接收消息.</p>
+<p>掌握:使用H5新特性创建ws客户端<br>(1)连接ws服务器</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> socket <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">WebSocket</span><span class="token punctuation">(</span><span class="token string">"ws://127.0.0.1:9001"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(2)向服务器发送消息</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">socket<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span>stringMsg<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(3)接收服务器返回消息</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">socket<span class="token punctuation">.</span><span class="token function-variable function">onmessage</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">e</span><span class="token punctuation">)</span><span class="token punctuation">{</span>e<span class="token punctuation">.</span>data<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>(4)断开与服务器连接</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">socket<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>小结端口:<br>apache 默认端口 80<br>mysql 默认端口 3306<br>https 默认端口 443<br>webSocket 默认端口 9001</p>
+<h2 id="CSS3"><a href="#CSS3" class="headerlink" title="CSS3"></a><strong>CSS3</strong></h2><ol>
+<li><p>阴影:使用<code>box-shadow</code>给逻辑框设置一个阴影，text-shadow文字加阴影</p>
+</li>
+<li><p>圆角：使用<code>border-image</code>和它关联的普通属性，而且可以通过<code>border-radius</code>属性来支持圆角边框</p>
+</li>
+<li><p>动画：为你的样式设置动画使用CSS Transitions以在不同的状态间设置动画，或者使用CSS Animations在页面的某些部分设置动画而不需要一个触发事件，你现在可以在页面中控制移动元素了</p>
+</li>
+<li><p>flex布局：css多栏布局</p>
+</li>
+<li><p>grid布局：网格布局</p>
+</li>
+<li><p>线性渐变：使用gradient设置线性渐变</p>
+</li>
+<li><p>媒体查询：根据显示设备的特性设置css</p>
+</li>
+<li><p>图片边框：使用border-image设置图片边框</p>
+</li>
+<li><p>em:与父元素的font-size的值有关</p>
+</li>
+<li><p>rem:与html的font-size的值有关</p>
+</li>
+<li><p>新增选择器 p:nth-child（n）{color: rgba（255, 0, 0, 0.75）}</p>
+</li>
+<li><p>弹性盒模型 display: flex;</p>
+</li>
+<li><p>多列布局 column-count: 5;</p>
+</li>
+<li><p>媒体查询 @media （max-width: 480px） {.box: {column-count: 1;}}</p>
+</li>
+<li><p>个性化字体 @font-face{font-family:BorderWeb;src:url（BORDERW0.eot）；}</p>
+</li>
+<li><p>颜色透明度 color: rgba（255, 0, 0, 0.75）；</p>
+</li>
+<li><p>圆角 border-radius: 5px;</p>
+</li>
+<li><p>渐变 background:linear-gradient（red, green, blue）；</p>
+</li>
+<li><p>阴影 box-shadow:3px 3px 3px rgba（0, 64, 128, 0.3）；</p>
+</li>
+<li><p>倒影 box-reflect: below 2px;</p>
+</li>
+<li><p>文字装饰 text-stroke-color: red;</p>
+</li>
+<li><p>文字溢出 text-overflow:ellipsis;</p>
+</li>
+<li><p>背景效果 background-size: 100px 100px;</p>
+</li>
+<li><p>边框效果 border-image:url（bt_blue.png） 0 10;</p>
+</li>
+<li><p>旋转 transform: rotate（20deg）；</p>
+</li>
+<li><p>倾斜 transform: skew（150deg, -10deg）；</p>
+</li>
+<li><p>位移 transform:translate（20px, 20px）；</p>
+</li>
+<li><p>缩放 transform: scale（。5）；</p>
+</li>
+<li><p>平滑过渡 transition: all .3s ease-in .1s; </p>
+</li>
+<li><p>动画 @keyframes anim-1 {50% {border-radius: 50%;}} animation: anim-1 1s;</p>
+</li>
+</ol>
+<h2 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a><strong>ES6</strong></h2><ol>
+<li><p>let和const关键字：let关键字定义块作用域变量，const定义常量</p>
+</li>
+<li><p>字符串模版：<code>${}</code></p>
+</li>
+<li><p>箭头函数：左边是参数集合，右边是函数体  <strong>箭头函数的this指向与普通函数不同  箭头函数在哪里定义 this就指向谁</strong></p>
+</li>
+<li><p>原生promise对象：将promise对象纳入规范</p>
+</li>
+<li><p>symbol：增加symbol数据类型</p>
+</li>
+<li><p>ES module: 引用ES module 模块化规范</p>
+</li>
+<li><p>… : 拓展运算符，用来代替argument对象</p>
+</li>
+<li><p>变量结构赋值</p>
+</li>
+<li><p>async函数</p>
+</li>
+<li><p>set和map函数</p>
+</li>
+<li><p>for..of循环：用来遍历实现迭代器接口的数据  任何部署了Iterator接口的对象，都可以用<code>for...of</code>循环遍历</p>
+</li>
+<li><p>class</p>
+<p>…</p>
+</li>
+</ol>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://morrth.top" rel="external nofollow noreferrer">Morrth</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://morrth.top/2021/030416107.html">http://morrth.top/2021/030416107.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://morrth.top" target="_blank">Morrth</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF%E6%96%B0%E7%89%B9%E6%80%A7/">
+                                    <span class="chip bg-color">前端新特性</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title"></h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/031118006.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="vue,js录音功能实现">
+                        
+                        <span class="card-title">vue,js录音功能实现</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-11
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/vue/" class="post-category">
+                                    vue
+                                </a>
+                            
+                            <a href="/categories/vue/js/" class="post-category">
+                                    js
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
+                        <span class="chip bg-color">功能实现</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/030416107.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="H5+CSS3+ES6新特性总结">
+                        
+                        <span class="card-title">H5+CSS3+ES6新特性总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/web%E5%89%8D%E7%AB%AF/" class="post-category">
+                                    web前端
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF%E6%96%B0%E7%89%B9%E6%80%A7/">
+                        <span class="chip bg-color">前端新特性</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('150')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Morrth<br />'
+            + '文章作者: Morrth<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+   
+	
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        
+		<div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Morrth</a>
+            |&nbsp;借鉴于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo Matery &nbsp主题</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">17.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:inline-block'>
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:inline-block'>
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+			
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "3";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "小破站已存活： " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "小破站已存活： " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+			
+            
+			
+            <br>
+            
+            
+                <span id="icp">
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44160202000233" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />&nbsp粤公网安备 44160202000233号
+                    </a>
+                    |&nbsp
+                    <a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备2021031956号</a>
+                </span>
+                
+            
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:785829239@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=785829239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 785829239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+	
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+    
+<script src="/assets/jquery.min.js?v=3.3.1"></script>
+<script src="/assets/jquery-ui.min.js?v=1.12.1"></script>
+<script src="/assets/waifu-tips.min.js?v=1.4.2"></script>
+<script src="/assets/live2d.min.js?v=1.0.5"></script>
+<script src="/assets/autoload.js?v=1.4.2"></script>
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+</body>
+
+
+</html>

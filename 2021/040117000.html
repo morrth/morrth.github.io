@@ -1,0 +1,2297 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="java 多线程, Morrth">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>java 多线程 | Morrth</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+	<!-- waifu-tips.js 依赖 JQuery 库 -->
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+
+   <style>
+    body{
+       background-image: url(https://z3.ax1x.com/2021/03/21/64RSQs.jpg);
+       background-repeat:no-repeat;
+       background-size:cover;
+       background-attachment:fixed;
+    }
+</style>
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Morrth</span>
+                </a>
+            </div>
+			
+    
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>文章</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Morrth</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			文章
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+			
+        
+    </nav>
+
+</header>
+
+    
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">java 多线程</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                <span class="chip bg-color">多线程</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category">
+                                java
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-04-01
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-04-29
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    16 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="1、创建线程的两种方法"><a href="#1、创建线程的两种方法" class="headerlink" title="1、创建线程的两种方法"></a>1、创建线程的两种方法</h2><h3 id="1、继承Thread类"><a href="#1、继承Thread类" class="headerlink" title="1、继承Thread类"></a>1、继承Thread类</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.demo01;
+
+/**
+ * 创建线程方式1，继承Thread
+ */
+public class ThreadTest extends Thread{
+    @Override
+    public void run() {
+        for (int i=0;i&lt;20;i++){
+            System.out.println("子线程启动"+i);
+        }
+    }
+    public static void main(String[] args) {
+
+        ThreadTest threadTest = new ThreadTest();
+        threadTest.start();
+
+        for (int i = 0; i &lt; 200; i++) {
+            System.out.println("主线程启动"+i);
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、实现Runnable接口"><a href="#2、实现Runnable接口" class="headerlink" title="2、实现Runnable接口"></a>2、实现Runnable接口</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.demo01;
+
+/**
+ * 创建线程方式2，实现Runnable接口
+ */
+public class ThreadTest2 implements Runnable {
+    @Override
+    public void run() {
+        for (int i=0;i&lt;20;i++){
+            System.out.println("子线程启动"+i);
+        }
+    }
+
+    public static void main(String[] args) {
+
+        ThreadTest2 threadTest2 = new ThreadTest2();
+        new Thread(threadTest2).start();
+
+        for (int i = 0; i &lt; 200; i++) {
+            System.out.println("主线程启动"+i);
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>推荐使用第二种，实现Runnable接口。</p>
+</blockquote>
+<blockquote>
+<p>还有第三种Callable接口</p>
+</blockquote>
+<h3 id="3、下载网络图片"><a href="#3、下载网络图片" class="headerlink" title="3、下载网络图片"></a>3、下载网络图片</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.demo01;
+
+import org.apache.commons.io.FileUtils;
+
+import java.io.File;
+import java.io.IOException;
+import java.net.URL;
+
+public class Downloader implements Runnable {
+
+    private String url;
+    private String name;
+
+    public Downloader(String url, String name) {
+        this.url = url;
+        this.name = name;
+    }
+
+    @Override
+    public void run() {
+        WebDownloader webDownloader = new WebDownloader();
+        try {
+            webDownloader.downloader(url,name);
+            System.out.println("下载了文件名："+name);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void main(String[] args) {
+        Downloader d1 = new Downloader("https://i0.hdslb.com/bfs/sycp/creative_img/202012/625fd761428be531b5405815ea33768b.jpg","第一个.jpg");
+        Downloader d2 = new Downloader("https://i0.hdslb.com/bfs/sycp/creative_img/202102/d521778b3f50444d90e6fefc6719065c.jpg","第二个.jpg");
+        Downloader d3 = new Downloader("https://i0.hdslb.com/bfs/activity-plat/static/20200714/953d0bfef678072bd11ec5fb6ff04190/nMOp2aGOf.png@400w_413h_1c_100q.webp","第三个.jpg");
+
+        new Thread(d1).start();
+        new Thread(d2).start();
+        new Thread(d3).start();
+    }
+}
+
+class WebDownloader{
+    public void downloader(String url,String name) throws IOException {
+        FileUtils.copyURLToFile(new URL(url),new File(name));
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="4、小结"><a href="#4、小结" class="headerlink" title="4、小结"></a>4、小结</h3><ul>
+<li>继承Thread类<ul>
+<li>子类继承Thread类具有多线程能力</li>
+<li>启动线程：子类对象.start()</li>
+<li>==不建议使用，避免OOP单继承局限性==</li>
+</ul>
+</li>
+<li>实现Runnable接口<ul>
+<li>实现接口Runnable具有多线程能力</li>
+<li>启动线程：传入目标对象+Thread对象.start()</li>
+<li>==推荐使用，避免单继承局限性，灵活方便，方便同一个对象被多个线程使用==</li>
+</ul>
+</li>
+</ul>
+<h2 id="2、静态代理"><a href="#2、静态代理" class="headerlink" title="2、静态代理"></a>2、静态代理</h2><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.proxystatic;
+
+/**
+ * 静态代理
+ */
+public class Test {
+
+    public static void main(String[] args) {
+        You you = new You();
+        WeddingCompany weddingCompany = new WeddingCompany(you);
+        weddingCompany.marry();
+    }
+
+}
+
+interface Marry{
+    void marry();
+}
+
+//真实对象：结婚的人
+class You implements Marry{
+
+    @Override
+    public void marry() {
+        System.out.println("小明准备结婚了！");
+    }
+}
+
+//代理对象：婚庆公司
+class WeddingCompany implements Marry{
+
+    private You you;
+
+    public WeddingCompany(You you) {
+        this.you = you;
+    }
+
+    @Override
+    public void marry() {
+        before();
+        you.marry();
+        after();
+    }
+
+    private void after() {
+        System.out.println("婚庆公司在结婚之后，收钱~");
+    }
+
+    private void before() {
+        System.out.println("婚庆公司在结婚之前，准备布置~");
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h2 id="3、lambda"><a href="#3、lambda" class="headerlink" title="3、lambda"></a>3、lambda</h2><h3 id="1、逐渐演进的版本"><a href="#1、逐渐演进的版本" class="headerlink" title="1、逐渐演进的版本"></a>1、逐渐演进的版本</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.lambda;
+
+public class TestLambda1 {
+
+    //3.静态内部类
+    static class Like2 implements ILike{
+        @Override
+        public void like() {
+            System.out.println("lambda like 2");
+        }
+    }
+
+    public static void main(String[] args) {
+        ILike like = new Like();
+        like.like();
+
+        like = new Like2();
+        like.like();
+
+        //4.局部内部类
+        class Like3 implements ILike{
+            @Override
+            public void like() {
+                System.out.println("lambda like 3");
+            }
+        }
+
+        like = new Like3();
+        like.like();
+
+        //5.匿名内部类
+        like = new ILike() {
+            @Override
+            public void like() {
+                System.out.println("lambda like 4");
+            }
+        };
+        like.like();
+
+        //6.lambda表达式
+        like = ()-&gt;{System.out.println("lambda like 5");};
+        like.like();
+    }
+
+}
+
+//1.定义一个函数式接口
+interface ILike{
+    void like();
+}
+//2.实现类
+class Like implements ILike{
+
+    @Override
+    public void like() {
+        System.out.println("lambda like 1");
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、最终简化版"><a href="#2、最终简化版" class="headerlink" title="2、最终简化版"></a>2、最终简化版</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.lambda;
+
+public class TestLambda2 {
+    public static void main(String[] args) {
+        ILove love = null;
+
+        love = (a,name)-&gt;{
+            System.out.println("a="+a);
+            System.out.println("名字="+name);
+        };
+
+        love.love(12,"王菲");
+    }
+}
+
+interface ILove{
+    void love(int a,String name);
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="3、总结"><a href="#3、总结" class="headerlink" title="3、总结"></a>3、总结</h3><ul>
+<li>lambda表达式只能有一行代码的情况下，才能简化为一行，如果有多行，那么就用代码块包裹</li>
+<li>前提接口是函数式接口，只有一个方法的接口</li>
+<li>多个参数也可以去掉参数，要去掉就都去掉，而且必须加上括号</li>
+</ul>
+<h3 id="4、线程状态"><a href="#4、线程状态" class="headerlink" title="4、线程状态"></a>4、线程状态</h3><p><img src="/assets/image-20210204111058577.png" alt="image-20210204111058577"></p>
+<p>详细</p>
+<p><img src="/assets/image-20210204112126116.png" alt="image-20210204112126116"></p>
+<h2 id="4、线程控制"><a href="#4、线程控制" class="headerlink" title="4、线程控制"></a>4、线程控制</h2><h3 id="1、停止stop"><a href="#1、停止stop" class="headerlink" title="1、停止stop"></a>1、停止stop</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+/**
+ * 1、建议线程正常停止，利用次数，不建议死循环
+ * 2、建议使用标志位，设置一个标志位
+ * 3、不要使用stop或者destroy等过时或者JDK不建议使用的方法
+ */
+public class TestStop implements Runnable{
+
+    private boolean flag = true;
+
+    @Override
+    public void run() {
+        int i = 0;
+        while (flag){
+            System.out.println("run....Runnable Thread "+i++);
+        }
+    }
+
+    public void over(){
+        flag = false;
+    }
+
+    public static void main(String[] args) {
+
+        TestStop testStop = new TestStop();
+        new Thread(testStop).start();
+
+        for (int i = 0; i &lt; 1000; i++) {
+            System.out.println("test main "+i);
+            if(i==500){
+                testStop.over();
+                System.out.println("线程停止了");
+            }
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、睡眠sleep"><a href="#2、睡眠sleep" class="headerlink" title="2、睡眠sleep"></a>2、睡眠sleep</h3><p>模拟网络延时</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+/**
+ * 模拟网络延时，放大问题的发生性
+ */
+public class TestSleep implements Runnable {
+
+    private int tickteNum = 10;
+
+    @Override
+    public void run() {
+        while (true){
+            if(tickteNum&lt;=0){
+                break;
+            }else {
+
+                //模拟延时
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                System.out.println(Thread.currentThread().getName()+"得到了第 "+tickteNum--+" 票");
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        TestSleep testSleep = new TestSleep();
+
+        new Thread(testSleep,"小红").start();
+        new Thread(testSleep,"小明").start();
+        new Thread(testSleep,"小黄").start();
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>倒计时，输出当前时间</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+/**
+ * 模拟倒计时，获取当前系统时间
+ */
+public class TestSleep2 {
+    public static void main(String[] args) throws InterruptedException {
+        TestSleep2 testSleep2 = new TestSleep2();
+        //testSleep2.tenDown();
+        testSleep2.getTime();
+    }
+    public void tenDown() throws InterruptedException {
+        int i = 10;
+        while (true){
+            if(i&lt;=0){
+                break;
+            }else{
+                Thread.sleep(1000);
+                System.out.println(i--);
+            }
+        }
+    }
+    public void getTime() throws InterruptedException {
+        Date startTime = new Date(System.currentTimeMillis());//获取当前系统时间
+        while (true){
+            Thread.sleep(1000);
+            System.out.println(new SimpleDateFormat("HH:mm:ss").format(startTime));
+            startTime = new Date(System.currentTimeMillis());//跟新当前时间
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>内个对象都有一把锁，sleep不会释放锁~</p>
+</blockquote>
+<h3 id="3、礼让yield"><a href="#3、礼让yield" class="headerlink" title="3、礼让yield"></a>3、礼让yield</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+public class TestYield {
+    public static void main(String[] args) {
+        MyYield myYield = new MyYield();
+
+        new Thread(myYield,"小红").start();
+        new Thread(myYield,"小名").start();
+    }
+}
+
+class MyYield implements Runnable{
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName()+"线程在执行");
+        Thread.yield();
+        System.out.println(Thread.currentThread().getName()+"线程被暂停");
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>礼让不一定成功，要看CPU的心情~</p>
+<p>礼让线程，让当前正在执行的线程暂停，但不阻塞，将线程从运行状态转为就绪状态</p>
+</blockquote>
+<h3 id="4、合并Join"><a href="#4、合并Join" class="headerlink" title="4、合并Join"></a>4、合并Join</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+public class TestJoin implements Runnable{
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 1000; i++) {
+            System.out.println("线程VIP来了"+i);
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        TestJoin testJoin = new TestJoin();
+        Thread thread = new Thread(testJoin);
+        thread.start();
+
+        for (int i = 0; i &lt; 500; i++) {
+            if(i==200){
+                //插队
+                thread.join();
+            }
+            System.out.println("main "+i);
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>也就是插队，待此线程执行完成后，再执行其他的线程，其他线程阻塞</p>
+</blockquote>
+<h3 id="5、线程的状态"><a href="#5、线程的状态" class="headerlink" title="5、线程的状态"></a>5、线程的状态</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.staticThread;
+
+/**
+ * 观察线程的状态
+ */
+public class TestState {
+
+    public static void main(String[] args) throws InterruptedException {
+        //使线程睡眠5秒
+        Thread thread = new Thread(()-&gt;{
+            for (int i = 0; i &lt; 5; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        //观察状态
+        Thread.State state = thread.getState();
+        System.out.println(state);//NEW
+
+        thread.start();
+        state = thread.getState();
+        System.out.println(state);//RUNNABLE
+
+        while (state!=Thread.State.TERMINATED){
+            state = thread.getState();
+            Thread.sleep(100);
+            System.out.println(state);//TERMINATED
+        }
+
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>当线程TERMINATED后（死亡后），就不能启动了，所以线程只能启动一次</p>
+</blockquote>
+<h3 id="6、线程的优先级"><a href="#6、线程的优先级" class="headerlink" title="6、线程的优先级"></a>6、线程的优先级</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.priority;
+
+public class TestPriority {
+    public static void main(String[] args) {
+        System.out.println(Thread.currentThread().getName()+"--&gt;"+Thread.currentThread().getPriority());
+
+        MyPriority myPriority = new MyPriority();
+        Thread t1 = new Thread(myPriority);
+        Thread t2 = new Thread(myPriority);
+        Thread t3 = new Thread(myPriority);
+        Thread t4 = new Thread(myPriority);
+        Thread t5 = new Thread(myPriority);
+
+        t1.setPriority(10);
+        t1.start();
+
+        t2.setPriority(5);
+        t2.start();
+
+        t3.setPriority(1);
+        t3.start();
+
+        t4.setPriority(8);
+        t4.start();
+
+        t5.setPriority(3);
+        t5.start();
+    }
+}
+
+class MyPriority implements Runnable{
+
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName()+"--&gt;"+Thread.currentThread().getPriority());
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>先设置优先级，再启动</p>
+<p>优先级低的只是意味着获得CPU调度的概率低，并不是优先级底就不会被调用了</p>
+</blockquote>
+<h3 id="7、守护（daemon）线程"><a href="#7、守护（daemon）线程" class="headerlink" title="7、守护（daemon）线程"></a>7、守护（daemon）线程</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.daemon;
+
+/**
+ * 测试守护线程
+ */
+public class TestDaemon {
+    public static void main(String[] args) {
+        God god = new God();
+        You you = new You();
+
+        Thread thread = new Thread(god);
+        thread.setDaemon(true);//变成守护线程，默认是false
+        thread.start();
+
+        new Thread(you).start();
+    }
+}
+
+class God implements Runnable{
+
+    @Override
+    public void run() {
+        while (true){
+            System.out.println("上帝保佑着你");
+        }
+    }
+}
+
+class You implements Runnable{
+
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 365; i++) {
+            System.out.println("-----开心的活着-----");
+        }
+        System.out.println("---goodBye world---");
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>线程分为==用户线程==和==守护线程==</p>
+<ul>
+<li>虚拟机必须等到==用户线程==执行完毕【例如：main等】</li>
+<li>虚拟机不用等到==守护线程==执行完毕【例如：GC等】</li>
+</ul>
+</blockquote>
+<h2 id="5、线程同步"><a href="#5、线程同步" class="headerlink" title="5、线程同步"></a>5、线程同步</h2><h3 id="1、三大线程不安全案例"><a href="#1、三大线程不安全案例" class="headerlink" title="1、三大线程不安全案例"></a>1、三大线程不安全案例</h3><p>不安全的买票</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+/**
+ * 不安全的买票
+ */
+public class UnSafeBuyTicket {
+    public static void main(String[] args) {
+        BuyTicket buyTicket = new BuyTicket();
+
+        new Thread(buyTicket,"小明").start();
+        new Thread(buyTicket,"小红").start();
+        new Thread(buyTicket,"黄牛党").start();
+    }
+}
+
+class BuyTicket implements Runnable{
+    private int ticketNums = 10;
+    boolean flag = true;
+    @Override
+    public void run() {
+        //买票
+        while (flag){
+            buy();
+        }
+    }
+
+    public void buy(){
+        if (ticketNums&lt;=0){
+            flag = false;
+            return;
+        }
+
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println(Thread.currentThread().getName()+"--&gt;"+ticketNums--);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不安全的取钱</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+public class UnSafeBank {
+    public static void main(String[] args) {
+
+        Account account = new Account(100,"理财基金");
+
+        TakeMoney you = new TakeMoney(account,50,"你");
+        TakeMoney girlFriend = new TakeMoney(account,100,"女朋友");
+
+        you.start();
+        girlFriend.start();
+
+    }
+}
+
+//账户
+class Account{
+    int money;//余额
+    String name;//卡名
+
+    public Account(int money, String name) {
+        this.money = money;
+        this.name = name;
+    }
+}
+
+//模拟取钱
+class TakeMoney extends Thread{
+
+    Account account;
+    int takeMoney;
+    int nowMoney;
+
+    public TakeMoney(Account account, int takeMoney, String name) {
+        super(name);
+        this.account = account;
+        this.takeMoney = takeMoney;
+    }
+
+    @Override
+    public void run() {
+        //判断有没有钱
+        if(account.money-this.takeMoney&lt;0){
+            System.out.println("账户余额不足~，还剩 "+account.money);
+            return;
+        }
+
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        account.money = account.money - takeMoney;
+        nowMoney = nowMoney + takeMoney;
+        System.out.println(account.name+"--&gt;"+"账户余额："+account.money);
+        System.out.println(this.getName()+"--&gt;"+"手里钱："+nowMoney);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>不安全的集合</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+import java.util.ArrayList;
+
+/**
+ * 不安全的集合
+ */
+public class UnSafeList {
+    public static void main(String[] args) throws InterruptedException {
+        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; 10000; i++) {
+            new Thread(()-&gt;{
+                list.add(Thread.currentThread().getName());
+            }).start();
+        }
+
+        Thread.sleep(10);
+
+        System.out.println("list's size = "+list.size());
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、synchronize同步"><a href="#2、synchronize同步" class="headerlink" title="2、synchronize同步"></a>2、synchronize同步</h3><p>对于上述三种线程不安全的案例解决方案</p>
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+/**
+ * 不安全的买票
+ */
+public class UnSafeBuyTicket {
+    public static void main(String[] args) {
+        BuyTicket buyTicket = new BuyTicket();
+
+        new Thread(buyTicket,"小明").start();
+        new Thread(buyTicket,"小红").start();
+        new Thread(buyTicket,"黄牛党").start();
+    }
+}
+
+class BuyTicket implements Runnable{
+    private int ticketNums = 10;
+    boolean flag = true;
+    @Override
+    public void run() {
+        //买票
+        while (flag){
+
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            buy();
+        }
+    }
+
+    //synchronized，同步方法，锁的是this
+    public synchronized void buy(){
+        if (ticketNums&lt;=0){
+            flag = false;
+            return;
+        }
+
+        System.out.println(Thread.currentThread().getName()+"--&gt;"+ticketNums--);
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+public class UnSafeBank {
+    public static void main(String[] args) {
+
+        Account account = new Account(100,"理财基金");
+
+        TakeMoney you = new TakeMoney(account,50,"你");
+        TakeMoney girlFriend = new TakeMoney(account,100,"女朋友");
+
+        you.start();
+        girlFriend.start();
+
+    }
+}
+
+//账户
+class Account{
+    int money;//余额
+    String name;//卡名
+
+    public Account(int money, String name) {
+        this.money = money;
+        this.name = name;
+    }
+}
+
+//模拟取钱
+class TakeMoney extends Thread{
+
+    Account account;
+    int takeMoney;
+    int nowMoney;
+
+    public TakeMoney(Account account, int takeMoney, String name) {
+        super(name);
+        this.account = account;
+        this.takeMoney = takeMoney;
+    }
+
+    @Override
+    public void run() {
+
+        //锁住account，因为account在增加减少【锁住变化的量】
+        synchronized(account){
+            //判断有没有钱
+            if(account.money-this.takeMoney&lt;0){
+                System.out.println("账户余额不足~，还剩 "+account.money);
+                return;
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            account.money = account.money - takeMoney;
+            nowMoney = nowMoney + takeMoney;
+            System.out.println(account.name+"--&gt;"+"账户余额："+account.money);
+            System.out.println(this.getName()+"--&gt;"+"手里钱："+nowMoney);
+        }
+
+
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.syn;
+
+import java.util.ArrayList;
+
+/**
+ * 不安全的集合
+ */
+public class UnSafeList {
+    public static void main(String[] args) throws InterruptedException {
+        ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; 10000; i++) {
+            new Thread(()-&gt;{
+                synchronized (list){
+                    list.add(Thread.currentThread().getName());
+                }
+            }).start();
+        }
+
+        Thread.sleep(10);
+
+        System.out.println("list's size = "+list.size());
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>记住：对于synchronized的对象就是我们需要==修改的对象==即可</p>
+</blockquote>
+<h2 id="6、锁"><a href="#6、锁" class="headerlink" title="6、锁"></a>6、锁</h2><h3 id="1、死锁"><a href="#1、死锁" class="headerlink" title="1、死锁"></a>1、死锁</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.lock;
+
+public class DeadLock {
+    public static void main(String[] args) {
+        Makeup g1 = new Makeup(0,"小红");
+        Makeup g2 = new Makeup(1,"小明明");
+
+        g1.start();
+        g2.start();
+    }
+}
+
+class LipStick{}
+class Mirror{}
+
+class Makeup extends Thread{
+
+    //需要一份资源，用static来保证只有一份资源
+    static LipStick lipStick = new LipStick();
+    static Mirror mirror = new Mirror();
+
+    private int choice;
+    private String girlName;
+
+    public Makeup(int choice,String girlName){
+        this.choice = choice;
+        this.girlName = girlName;
+    }
+
+    @Override
+    public void run() {
+        makeup();
+    }
+
+    private void makeup() {
+        if(choice==0){
+            //不要同时抱一把锁就好了
+            synchronized (lipStick){
+                System.out.println(this.girlName+"获得口红");
+//                synchronized (mirror){
+//                    System.out.println(this.girlName+"获得镜子");
+//                }
+            }
+            synchronized (mirror){
+                System.out.println(this.girlName+"获得镜子");
+            }
+        }else{
+            synchronized (mirror){
+                System.out.println(this.girlName+"获得镜子");
+//                synchronized (lipStick){
+//                    System.out.println(this.girlName+"获得口红");
+//                }
+            }
+            synchronized (lipStick){
+                System.out.println(this.girlName+"获得口红");
+            }
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、死锁产生的必要条件"><a href="#2、死锁产生的必要条件" class="headerlink" title="2、死锁产生的必要条件"></a>2、死锁产生的必要条件</h3><p><img src="/assets/image-20210204214449140.png" alt="image-20210204214449140"></p>
+<h3 id="3、ReentrantLock可重入锁"><a href="#3、ReentrantLock可重入锁" class="headerlink" title="3、ReentrantLock可重入锁"></a>3、ReentrantLock可重入锁</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.lock;
+
+import java.util.concurrent.locks.ReentrantLock;
+
+public class TestReentrantLock {
+    public static void main(String[] args) {
+        Lock2 lock2 = new Lock2();
+        new Thread(lock2).start();
+        new Thread(lock2).start();
+    }
+}
+
+class Lock2 implements Runnable{
+    private int ticketNums = 10;
+
+    private final ReentrantLock reentrantLock = new ReentrantLock();
+
+    @Override
+    public void run() {
+        while (true){
+            try{
+                //加锁
+                reentrantLock.lock();
+                if(ticketNums&lt;=0){
+                    break;
+                }else{
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                    System.out.println(ticketNums--);
+                }
+            }
+            finally {
+                //解锁
+                reentrantLock.unlock();
+            }
+
+
+        }
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="/assets/image-20210204220748282.png" alt="image-20210204220748282"></p>
+<h2 id="7、线程通信"><a href="#7、线程通信" class="headerlink" title="7、线程通信"></a>7、线程通信</h2><h3 id="1、管程法"><a href="#1、管程法" class="headerlink" title="1、管程法"></a>1、管程法</h3><pre class="line-numbers language-java" data-language="java"><code class="language-java">package com.draco.gaoji;
+
+/**
+ *
+ */
+public class TestPC {
+    public static void main(String[] args) {
+        KeepSpace keepSpace = new KeepSpace();
+        new Thread(new Producer(keepSpace)).start();
+        new Thread(new Customer(keepSpace)).start();
+    }
+
+}
+
+class Food{
+    int id;
+    public Food(int id) {
+        this.id = id;
+    }
+}
+class Producer implements Runnable{
+
+    KeepSpace keepSpace;
+
+    public Producer(KeepSpace keepSpace) {
+        this.keepSpace = keepSpace;
+    }
+    @Override
+    public void run() {
+        for (int i = 0; i &lt; 100; i++) {
+            keepSpace.push(new Food(i));
+            System.out.println("生产了第"+i+"个食物");
+        }
+    }
+}
+
+class Customer implements Runnable{
+
+    KeepSpace keepSpace;
+
+    public Customer(KeepSpace keepSpace) {
+        this.keepSpace = keepSpace;
+    }
+
+    @Override
+    public void run() {
+        //消费者消费
+        for (int i = 0; i &lt; 100; i++) {
+            System.out.println("消费了第"+keepSpace.pop().id+"个食物");
+        }
+    }
+}
+
+class KeepSpace{
+    //空间大小
+    Food[] foods = new Food[10];
+    //空间计数器
+    int count = 0;
+
+    public synchronized void push(Food food){
+        //空间满了，等待消费者消费
+        if (count==foods.length){
+            //通知消费者消费
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        //空间没有满，继续制作
+        foods[count] = food;
+        count++;
+        //有吃的，可以通知消费者消费了
+        this.notifyAll();
+    }
+
+    //消费者消费
+    public synchronized Food pop(){
+        //判断能否消费
+        if (count==0){
+            //等待生产者生产
+            try {
+                this.wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        count--;
+        Food food = foods[count];
+        //吃完了，通知生产者生产
+        this.notifyAll();
+        return food;
+    }
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="2、信号灯法"><a href="#2、信号灯法" class="headerlink" title="2、信号灯法"></a>2、信号灯法</h3><p><strong>判断一个标志位flag，如果为true，就让他等待、如果为false，就让他去通知另外一个人、把两人衔接起来，就像咱们的信号灯红灯停，绿灯行，通过这样一个判断方式，只要来判断什么瑞后让他等待，什么时候将他唤醒</strong></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://morrth.top" rel="external nofollow noreferrer">Morrth</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://morrth.top/2021/040117000.html">http://morrth.top/2021/040117000.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="http://morrth.top" target="_blank">Morrth</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+                                    <span class="chip bg-color">多线程</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title"></h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2021/040117221.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="jvm初探">
+                        
+                        <span class="card-title">jvm初探</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category">
+                                    java
+                                </a>
+                            
+                            <a href="/categories/java/jvm/" class="post-category">
+                                    jvm
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">学习笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/032918006.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="引入base64编码的数据">
+                        
+                        <span class="card-title">引入base64编码的数据</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/H5/" class="post-category">
+                                    H5
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/base64/">
+                        <span class="chip bg-color">base64</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('150')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Morrth<br />'
+            + '文章作者: Morrth<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+</style>
+
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='list'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+   
+	
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        
+		<div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Morrth</a>
+            |&nbsp;借鉴于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo Matery &nbsp主题</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">17.5k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv" style='display:inline-block'>
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:inline-block'>
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+			
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "3";
+                    var startDate = "19";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "小破站已存活： " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "小破站已存活： " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+			
+            
+			
+            <br>
+            
+            
+                <span id="icp">
+                    <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44160202000233" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="/medias/icp.png" style="vertical-align: text-bottom;" />&nbsp粤公网安备 44160202000233号
+                    </a>
+                    |&nbsp
+                    <a href="http://beian.miit.gov.cn/" target="_blank">粤ICP备2021031956号</a>
+                </span>
+                
+            
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:785829239@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=785829239" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 785829239" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+</div>
+    </div>
+	
+    
+</footer>
+
+<div class="progress-bar"></div>
+
+    
+<script src="/assets/jquery.min.js?v=3.3.1"></script>
+<script src="/assets/jquery-ui.min.js?v=1.12.1"></script>
+<script src="/assets/waifu-tips.min.js?v=1.4.2"></script>
+<script src="/assets/live2d.min.js?v=1.0.5"></script>
+<script src="/assets/autoload.js?v=1.4.2"></script>
+<script type="text/javascript">
+    //只在桌面版网页启用特效
+    var windowWidth = $(window).width();
+    if (windowWidth > 768) {
+        document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+    }
+
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="1" src="/libs/background/ribbon.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+</body>
+
+
+</html>
